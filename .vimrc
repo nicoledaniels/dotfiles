@@ -13,9 +13,15 @@ Plugin 'gmarik/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 
-" Molokai settings
+filetype plugin on
 syntax on
-colorscheme molokai
+set number
+
+" Dracula Color Scheme
+Plugin 'dracula/vim'
+
+" FXF "
+Plugin 'junegunn/fzf'
 
 " Syntastic settings
 Plugin 'scrooloose/syntastic'
@@ -40,6 +46,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_show_hidden = 1
 
 " Fugitive Vim settings
 Plugin 'tpope/vim-fugitive'
@@ -60,7 +67,12 @@ Plugin 'honza/vim-snippets'
 Plugin 'Raimondi/delimitMate'
 
 "vim-airline settings
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+" Enable the list of buffers "
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename"
+let g:airline#extensions#tabline#fnamemod = ':t'
 set laststatus=2
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -73,6 +85,14 @@ set backspace=2
 set tabstop=2
 set shiftwidth=2
 set expandtab
+set cursorline
+set wildmenu
+set lazyredraw
+set showmatch
+
+" Searching
+set incsearch
+set hlsearch
 
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
